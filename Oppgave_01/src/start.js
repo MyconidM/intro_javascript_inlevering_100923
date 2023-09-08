@@ -1,4 +1,4 @@
-import './styles.css';
+//import './styles.css';
 
 // Statisk tekst som brukes til å søke i
 const text =
@@ -6,8 +6,39 @@ const text =
 
 const longestWord = () => {
   // TODO: Gjør om text til array eks. ['Baby', 'cliche']
+  const orgText = document.createElement("p");
+  orgText.innerText = `Orginale texten:
+  ` + text;
+  const textArr = text.split(" ");
+  console.log(textArr)
+  document.getElementById("app").appendChild(orgText);
+
   // TODO: Velg første ord så du har noe å sammenlikne med
+  const firstWord = textArr[0];
+  const Word = document.createElement("p");
+  Word.innerText = `Første ordet i texten: 
+  ${firstWord}`;
+  document.getElementById("app").appendChild(Word);
+
   // TODO: Gå igjennom alle ordene og oppdater hvis nytt ord er lengre
+  textArr.sort((a, b) => a.length - b.length)
+  const longestWordArr = textArr[textArr.length -1];
+  console.log(textArr)
+  console.log(`Første ordet i texten: ${firstWord}`)
+  console.log(`Lengste ordet i texten: ${longestWordArr}`)
+
+  if (firstWord < textArr[textArr.length -1]) {
+    Word.innerText = `Lengste ordet i texten: 
+    ${longestWordArr}`;
+  }
+
+  // const sortedArr = document.createElement("ul")
+  // document.getElementById("app").appendChild(sortedArr)
+  // for (i = 0; i < textArr.length; ++i) {
+  //   let liSort = document.createElement('li');
+  //   liSort.innerText = textArr[i];
+  //   sortedArr.appendChild(liSort);
+  // }
 };
 
 console.log(longestWord());

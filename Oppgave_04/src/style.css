@@ -1,0 +1,25 @@
+#numbers {
+    list-style: none;
+    display: flex;
+}
+
+#numbers li {
+    padding: 1rem;
+    border: 2px solid gray;
+    margin: 1rem;
+    width: 1rem;
+}
+#guess input {
+    padding: 1rem;
+    border: 2px solid gray;
+    margin: 1rem;
+    width: 1rem;
+    border-color: rgb(0, 174, 255);
+}
+
+.congrats {
+    color: green
+}
+.wrong {
+    color: red;
+}
